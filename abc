@@ -1,0 +1,119 @@
+﻿select sms_sink from watch_list where tracking_id ='1234239876';
+select * from banner_clicks where tracking_id='1Z04XY680300986202';
+
+Select overall_score, itemcond_score, packaging_score, uidesign_score, short_comment, long_comment
+from feedback_info where tracking_id = '1ZA431V60348124381';
+
+----------------------------------------------------------------------------------------------------------------
+Range for homedepot=   https://beta.narvar.com/tracking/homedepot/seko?tracking_numbers=000031017342
+
+-----------------------------------------------------------------------------------------------------------------
+For Home depot
+select b.question,c.answer,a.long_comment from
+feedback_info a, question_info b, answer_info c
+where a.tracking_id = '1Z6YA554YW40984153'
+and c.fk_feedback_info = a.dbio_rowid
+and c.fk_question_info = b.dbio_rowid
+
+------------------------------------------------------------------------------------------------------------------
+To encrypt or decrypt-
+cd jasypt-1.9.1/bin/ 
+./decrypt.sh input='4oTbkdxCP84ICIidAvMak5CsNrawOlal' password='narvar'
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Open intellij from terminal:-
+
+-cd /opt/idea-IC-139.224.1/bin/
+-./idea.sh
+
+AND 
+Extracting tar file from terminal
+- sudo tar -xvzf /home/preeti/ideaIC-14.tar.gz -C /opt
+---------------------------------------------------------------------------------------------------------------------------------------------
+While taking pull on QA server
+if shows error:-
+
+error: Your local changes to the following files would be overwritten by merge:
+	conf/retailers/homedepot/config.json
+Please, commit your changes or stash them before you can merge.
+Aborting
+
+
+then
+mv conf/retailers/homedepot/config.json conf/retailers/homedepot/config.json conf/retailers/homedepot/config.json conf/retailers/homedepot/config.json.bk
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+Local Pull
+-cd /wdrive/blason/apps/lemuriah/
+-git pull
+
+----------------------------------------------------------------------------------------------------------------------------------------
+Copying any file to other location
+- cp quartz.properties /etc/narvar
+
+------------------------------------------------------------------------------------------------------------------------------------------
+select sms_sink,last_state,c_status, last_polled from watch_list where tracking_id = '581370161864';
+
+
+navigationClicks
+clickCounts
+
+
+http://www.c4learn.com/javaprogramming/
+
+-----------------------------------------------------------------------------------------------------------------------------------
+Multi Package
+
+http://test.narvar.com/tracking/UrbanOutfitters/asendia?order=A131252995
+
+-------------------------------------------------------------------------------------------------------------------------------------
+Upper Case= DELIVERY STATUS
+capitalize case= Delivery Date
+
+----------------------------------------------------------------------------------------------------------------------------------
+To open eclipse:-
+- sudo dpkg-reconfigure eclipse-pde eclipse-jdt
+- sudo dpkg-reconfigure eclipse-rcp
+- ln -s /usr/lib/jni/libswt-* ~/.swt/lib/linux/x86_64/
+
+----------------------------------------------------------------------------------------------------------------------------------
+ select tracking_id,order_number,retailer_moniker,fk_carrier,status from tracking_info where order_number<>'' and fk_Carrier=21 order by dbio_rowid desc limit 50;
+
+Then put tracking number in anciallry table and take out request_uri
+select * from ancillary_info where fk_tracking_info in(select dbio_rowid from tracking_info where tracking_id = '725008980107ABNF020000020107444721O');
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+select tracking_id,last_state,long_url from watch_list where retailer_moniker ='sephora' and last_state='shipped' order by dbio_rowid desc limit 5;
+==============================================================================================================
+Kaun sa carrier kis retailer ke sath:-
+select fk_carrier,count(*) from tracking_info where retailer_moniker = 'petflow' group by fk_carrier order by count desc;
+
+=============================================================================================================================
+Flash QA
+
+1. ssh into QA server
+2. cd to /home/ec2-user/redis-stable
+3. Run command: src/redis-cli -h qa-cache.zidw6a.0001.usw2.cache.amazonaws.com -p 6379
+4-flushall
+===================================================================================================================================
+Build On QA
+1. Run Lemuriah build
+2. Run below chown command 
+          sudo chown -R ec2-user:ec2-user /wdrive/blason/apps/lemuriah/
+3. Run NA build.
+
+=======================================================================================================================================
+<OriginAddress>352 WEST MARKHAM ST</OriginAddress> = origin_street
+<DestinationAddress>6245 COLFAX TER</DestinationAddress> = delivery_street
+
+======================================================================================================================================
+Handover Carrier tracking number:-
+select status, tracking_id,retailer_moniker from tracking_info where retailer_moniker='warbyparker' and fk_carrier = 4 and status = 'Delivered' and fk_partner_carrier = '2' order by dbio_rowid desc limit 5;
+
+==========================================================================================================================
+True and Co query:-
+select tracking_id,service_code,edd_source,fk_carrier,status,ship_date,retailer_moniker from tracking_info where retailer_moniker = 'trueandco' and service_code IS NOT NULL and fk_carrier = 4 order by dbio_rowid DESC limit 10;
+
+
